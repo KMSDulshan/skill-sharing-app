@@ -1,2 +1,0 @@
-# skill-sharing-app
-PAF
