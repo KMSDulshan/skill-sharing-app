@@ -7,7 +7,8 @@ import Profile from "./pages/Profile";
 import CreatePost from "./pages/CreatePost";
 import Notifications from "./pages/Notifications";
 import Login from "./pages/Login";
-export function App() {
+
+export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true); // For demo purposes, set to true
   if (!isAuthenticated) {
     return <Login onLogin={() => setIsAuthenticated(true)} />;
