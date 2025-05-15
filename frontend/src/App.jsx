@@ -7,13 +7,15 @@ import Profile from "./pages/Profile";
 import CreatePost from "./pages/CreatePost";
 import Notifications from "./pages/Notifications";
 import Login from "./pages/Login";
+import Resource from "./pages/resource/Resource";
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true); // For demo purposes, set to true
   if (!isAuthenticated) {
     return <Login onLogin={() => setIsAuthenticated(true)} />;
   }
-  return <BrowserRouter>
+  return (
+    <BrowserRouter>
       <div className="flex flex-col min-h-screen bg-gray-50">
         <Header />
         <div className="flex flex-1">
@@ -24,9 +26,11 @@ export default function App() {
               <Route path="/profile/:username" element={<Profile />} />
               <Route path="/create" element={<CreatePost />} />
               <Route path="/notifications" element={<Notifications />} />
+              <Route path="/resources" element={<Resource />} />
             </Routes>
           </main>
         </div>
       </div>
-    </BrowserRouter>;
+    </BrowserRouter>
+  );
 }
